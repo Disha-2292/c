@@ -1,2 +1,1 @@
-# c
-Author Disha Gohil
+c - Author Disha Gohil
