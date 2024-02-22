@@ -1,1 +1,2 @@
-c - Author Disha Gohil
+C Programming
+Author- Disha G
