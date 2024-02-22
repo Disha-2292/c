@@ -1,7 +1,6 @@
 // //Opeator in c//
 // //1. Arithmatic operator(using switch)//
 #include <stdio.h>
-
 int main() {
     printf("----------Calculator----------\n");
     char choices;
@@ -44,5 +43,54 @@ int main() {
         printf("Do you want to continue(Y/N) ? ");
         scanf(" %c", &choices); 
     } while (choices == 'Y' || choices == 'y');
+    return 0;
+}
+
+//2.Relational operator and logical operator (using if-else if)//
+#include<stdio.h>
+int main(){
+    float per;
+    printf("Enter your marks \n");
+    scanf("%f",&per);
+    
+    if(per <=35 && per>0){
+        printf("Your are Fail\n");
+    }
+    else if (per >35 && per<=60){
+        printf("Your Grade is C\n");
+    }
+    else if(per >60 && per<=80){
+        printf("Your Grade is B\n");
+    }
+    else if(per >80 && per<=100){
+        printf("Your Grade is A\n");
+    }
+    else{
+        printf("Invalid Marks");
+    }
+    return 0;
+}
+
+//3.Bitwise operator(HackerRank Problem Statement)//
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void calculate_the_maximum(int n, int k) {
+    int resultAnd=0, resultOr=0, resultXor=0;
+    for (int a=1;a<n;a++){
+        for (int b=a+1;b<=n;b++) {
+        int currentAnd=a&b, currentOr=a|b, currentXor=a^b;
+        if (currentAnd>resultAnd&&currentAnd<k) resultAnd=a&b;
+        if (currentOr>resultOr&&currentOr<k) resultOr=a|b;
+        if (currentXor>resultXor&&currentXor<k) resultXor=a^b;
+        }
+    }
+    printf("%d\n%d\n%d", resultAnd, resultOr, resultXor); 
+}
+int main() {
+    int n, k;
+    scanf("%d %d", &n, &k);
+    calculate_the_maximum(n, k);
     return 0;
 }
