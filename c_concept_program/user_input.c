@@ -1,7 +1,5 @@
 /*user input-Name,rollno,per,mobile,address*/
-
 #include <stdio.h>
-
 int main()
 {
     printf("User Details\n");
