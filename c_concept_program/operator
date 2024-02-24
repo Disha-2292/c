@@ -71,7 +71,7 @@ int main(){
     return 0;
 }
 
-//3.Bitwise operator(HackerRank Problem Statement)//
+//3.Bitwise operator(HackerRank Problem Statement---You will be given an integer n, and threshold k. For each number i from 1 through n,find the maximum value of the logical and or and xor when comparison against int trhough n that are greater than i consider value only i f the comparison return less than k.print result of and or xor)//
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
