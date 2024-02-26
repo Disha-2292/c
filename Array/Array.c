@@ -105,14 +105,24 @@ void freqn(int arr[],int n){
     }
             printf("%d\n",maxElement);
 }
-
+//2 pointer approach
+int remove_duplicate(int arr[],int n){
+    int i=0;
+    for(int j=1;j<n;j++){
+        if(arr[i]!=arr[j]){
+            arr[i+1]=arr[j];
+            i++;
+        }
+    }
+    return i+1;
+}
 int main() {
     char ch;
     int choice, n;
     int arr[100]; 
     do {
         printf("Enter your choices\n");
-        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Ascending order\n9. Remove Duplicate\n");
+        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n");
         scanf("%d", &choice);
         switch(choice) {
             case 1:
@@ -143,11 +153,17 @@ int main() {
                 asc(arr,n);
             break;
             case 8:
-            printf("Arra in Descending order\n");
                 dsc(arr,n);
             break;
             case 9:
                 freqn(arr,n);
+            break;
+            case 10:
+               int k = remove_duplicate(arr, n);
+  printf("The array after removing duplicate elements is\n");
+  for (int i = 0; i < k; i++) {
+    printf("%d ",arr[i]) ;
+  }
             break;
         }
         printf("\nDo you want to continue? (press y/n)\n");
