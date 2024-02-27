@@ -126,13 +126,35 @@ void leftrotate(int arr[],int n){
     for (int i = 0; i < n; i++) {
     printf("%d ",arr[i]);}
 }
+void RotatetoleftbyD(int arr[], int n, int k)
+{
+  if (n == 0)
+    return;
+  k = k % n;
+  if (k > n)
+    return;
+  int temp[k];
+  for (int i = 0; i < k; i++)
+  {
+    temp[i] = arr[i];
+  }
+  for (int i = 0; i < n - k; i++)
+  {
+    arr[i] = arr[i + k];
+  }
+  for (int i = n - k; i < n; i++)
+  {
+    arr[i] = temp[i - n + k];
+  }
+}
+
 int main() {
     char ch;
     int choice, n;
     int arr[100]; 
     do {
         printf("Enter your choices\n");
-        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n11. Left Rotate Array\n");
+        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n11. Left Rotate Array\n12. Left Rotate by D\n");
         scanf("%d", &choice);
         switch(choice) {
             case 1:
@@ -169,15 +191,23 @@ int main() {
                 freqn(arr,n);
             break;
             case 10:
-               int k = remove_duplicate(arr, n);
-  printf("The array after removing duplicate elements is\n");
-  for (int i = 0; i < k; i++) {
-    printf("%d ",arr[i]) ;
-  }
+                int k = remove_duplicate(arr, n);
+                printf("The array after removing duplicate elements is\n");
+                for (int i = 0; i < k; i++) {
+                    printf("%d ",arr[i]) ;
+                }
             break;
             case 11:
                 leftrotate(arr,n);
                 break;
+            case 12:
+                printf("Enter k position\n");
+                scanf("%d",&k);
+                RotatetoleftbyD(arr, n, k);
+                for (int i = 0; i < n; i++)
+                {
+                    printf("%d",arr[i]); 
+                }
         }
         printf("\nDo you want to continue? (press y/n)\n");
         scanf(" %c", &ch); 
