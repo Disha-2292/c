@@ -116,13 +116,23 @@ int remove_duplicate(int arr[],int n){
     }
     return i+1;
 }
+
+void leftrotate(int arr[],int n){
+    int temp=arr[0];
+    for(int i=1;i<n;i++){
+        arr[i-1]=arr[i];
+    }
+    arr[n-1]=temp;
+    for (int i = 0; i < n; i++) {
+    printf("%d ",arr[i]);}
+}
 int main() {
     char ch;
     int choice, n;
     int arr[100]; 
     do {
         printf("Enter your choices\n");
-        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n");
+        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n11. Left Rotate Array\n");
         scanf("%d", &choice);
         switch(choice) {
             case 1:
@@ -165,6 +175,9 @@ int main() {
     printf("%d ",arr[i]) ;
   }
             break;
+            case 11:
+                leftrotate(arr,n);
+                break;
         }
         printf("\nDo you want to continue? (press y/n)\n");
         scanf(" %c", &ch); 
