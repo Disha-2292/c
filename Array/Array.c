@@ -154,7 +154,7 @@ int main() {
     int arr[100]; 
     do {
         printf("Enter your choices\n");
-        printf("1. Enter array elements\n2. Traverse\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n11. Left Rotate Array\n12. Left Rotate by D\n");
+        printf("1. Enter array elements\n2. Traverse an Array\n3. Largest Element\n4. Smallest Element\n5. Second largest Element\n6. Second smallest Element\n7. Array in Ascending order\n8. Array in Descending order\n9. Frequent Element\n10. Remove Duplicate\n11. Left Rotate Array\n12. Left Rotate by D\n");
         scanf("%d", &choice);
         switch(choice) {
             case 1:
